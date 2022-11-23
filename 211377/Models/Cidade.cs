@@ -101,5 +101,23 @@ namespace _211377.Models
             }
         }
 
+        public void consultarCidade()
+        {
+            try
+            {
+                Banco.abrirConexao();
+
+                Banco.comando = new MySqlCommand("SELECT cidade FROM cidades WHERE id = @id", Banco.conexao);
+                Banco.comando.Parameters.AddWithValue("@id", id);
+
+                Banco.comando.ExecuteNonQuery();
+
+                Banco.fecharConexao();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

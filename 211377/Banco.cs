@@ -68,6 +68,10 @@ namespace _211377
                                             "categoria char(20))", conexao);
                 comando.ExecuteNonQuery();
 
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS clientes " +
+                                            "(id integer auto_increment primary key,nome char(40), id_cidade integer,data_nasc date,renda double(10,2),cpf char(14),foto varchar(150),venda boolean);", conexao);
+                comando.ExecuteNonQuery();
+
                 fecharConexao();
             }
             catch(Exception e)

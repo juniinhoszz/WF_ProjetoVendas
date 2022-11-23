@@ -167,6 +167,12 @@
     <EmbeddedResource Include="Views\FRMCidades.resx">
       <DependentUpon>FRMCidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FRMClientes.resx">
+      <DependentUpon>FRMClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FRMMarcas.resx">
+      <DependentUpon>FRMMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

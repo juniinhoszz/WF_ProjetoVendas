@@ -39,5 +39,11 @@ namespace _211377
             Views.FRMMarcas form = new Views.FRMMarcas();
             form.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Views.FRMClientes form = new Views.FRMClientes();
+            form.Show();
+        }
     }
 }

@@ -304,7 +304,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtID);
             this.Name = "FRMCategorias";
-            this.Text = "FRMCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Categorias";
             this.Load += new System.EventHandler(this.FRMCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
