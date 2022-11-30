@@ -20,8 +20,6 @@ namespace _211377.Models
         public string foto { get; set; }
         public bool venda { get; set; }
 
-        public string cidade { get; set; }
-
         public void insert()
         {
             try
@@ -30,9 +28,10 @@ namespace _211377.Models
 
                 
 
-                Banco.comando = new MySqlCommand("INSERT INTO clientes (nome, id_cidade, renda, cpf, foto, venda) VALUES (@nome, @id_cidade, @renda, @cpf, @foto, @venda)", Banco.conexao);
+                Banco.comando = new MySqlCommand("INSERT INTO clientes (nome, id_cidade, data_nasc, renda, cpf, foto, venda) VALUES (@nome, @id_cidade, @data_nasc, @renda, @cpf, @foto, @venda)", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("@id_cidade", id_cidade);
+                Banco.comando.Parameters.AddWithValue("@data_nasc", data_nasc);
                 Banco.comando.Parameters.AddWithValue("@renda", renda);
                 Banco.comando.Parameters.AddWithValue("@cpf", cpf);
                 Banco.comando.Parameters.AddWithValue("@foto", foto);
@@ -54,9 +53,10 @@ namespace _211377.Models
             {
                 Banco.abrirConexao();
 
-                Banco.comando = new MySqlCommand("UPDATE clientes set nome=@nome, id_cidade=@id_cidade, renda=@renda, cpf=@cpf, foto=@foto, venda=@venda WHERE id = @id", Banco.conexao);
+                Banco.comando = new MySqlCommand("UPDATE clientes set nome=@nome, id_cidade=@id_cidade, data_nasc=@data_nasc, renda=@renda, cpf=@cpf, foto=@foto, venda=@venda WHERE id = @id", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("@id_cidade", id_cidade);
+                Banco.comando.Parameters.AddWithValue("@data_nasc", data_nasc);
                 Banco.comando.Parameters.AddWithValue("@renda", renda);
                 Banco.comando.Parameters.AddWithValue("@cpf", cpf);
                 Banco.comando.Parameters.AddWithValue("@foto", foto);

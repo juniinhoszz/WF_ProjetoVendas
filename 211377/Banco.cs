@@ -72,6 +72,10 @@ namespace _211377
                                             "(id integer auto_increment primary key,nome char(40), id_cidade integer,data_nasc date,renda double(10,2),cpf char(14),foto varchar(150),venda boolean);", conexao);
                 comando.ExecuteNonQuery();
 
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS produtos " +
+                                            "(id integer auto_increment primary key,descricao char(40), id_categoria integer, id_marca integer, estoque double(10,3), valor_venda double(10,3) ,foto varchar(150));", conexao);
+                comando.ExecuteNonQuery();
+
                 fecharConexao();
             }
             catch(Exception e)

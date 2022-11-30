@@ -67,8 +67,6 @@ namespace _211377.Views
             picFoto.ImageLocation = ofdImage.FileName;
         }
 
-        
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -174,19 +172,25 @@ namespace _211377.Views
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvClientes.RowCount > 0)
+            try
             {
-                txtID.Text = dgvClientes.CurrentRow.Cells["id"].Value.ToString();
-                txtNome.Text = dgvClientes.CurrentRow.Cells["nome"].Value.ToString();
-                cboCidades.Text = dgvClientes.CurrentRow.Cells["id_cidade"].Value.ToString();
-                txtUF.Text = dgvClientes.CurrentRow.Cells["uf"].Value.ToString();
-                checkVenda.Checked = (bool)dgvClientes.CurrentRow.Cells["venda"].Value;
-                txtCPF.Text = dgvClientes.CurrentRow.Cells["cpf"].Value.ToString();
-                data_Nasc.Text = dgvClientes.CurrentRow.Cells["data_nasc"].Value.ToString();
-                txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
-                picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
+                if (dgvClientes.RowCount > 0)
+                {
+                    txtID.Text = dgvClientes.CurrentRow.Cells["id"].Value.ToString();
+                    txtNome.Text = dgvClientes.CurrentRow.Cells["nome"].Value.ToString();
+                    cboCidades.SelectedValue = dgvClientes.CurrentRow.Cells["id_cidade"].Value.ToString();
+                    checkVenda.Checked = (bool)dgvClientes.CurrentRow.Cells["venda"].Value;
+                    txtCPF.Text = dgvClientes.CurrentRow.Cells["cpf"].Value.ToString();
+                    data_Nasc.Text = dgvClientes.CurrentRow.Cells["data_nasc"].Value.ToString();
+                    txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
+                    picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
 
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void cboCidades_SelectedIndexChanged(object sender, EventArgs e)
